@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<%- include('header'); -%>
+    <div class="box" id="heading">
+          <h1><%=list_Title%></h1>
+    </div>
+
+
+    <div class="box">
+
+
+    <% newListItems.forEach(function(newListItem){ %>
+      <form class="" action="/delete" method="post">
+
+
+        <div class="item">
+          <input type="checkbox" name= "checkboxinput" value="<%=newListItem._id %>" onChange="this.form.submit()" >
+            <p><%= newListItem.name %></p>
+
+        </div>
+            <input type="hidden" name="listName" value=<%= list_Title %>></input>
+          </form>
+    <%  }) %>
+        <!-- <% for( var i=0; i<newListItems.length; i++){ %>
+
+            <div class="item">
+              <input type="checkbox" >
+                <p><%= newListItems[i].name %></p>
+            </div>
+                  <% } %> -->
+
+
+                    <form class="item" action="/" method="post">
+                      <input type="text" name="type_Here" placeholder="Type to Add here" autocomplete="off" >
+                      <button type="submit" name="buttonPageSelector" value= <%=list_Title %>>+</button>
+                    </form>
+
+    </div>
+
+<%- include('footer'); -%>
+
+<!-- <ul>
+  <li>get exsersize</li>
+  <li>eat well</li>
+  <li>practice well</li>
+
+  <li></li>
+
+</ul> -->
